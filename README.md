@@ -33,65 +33,6 @@ Ce workflow effectue les actions suivantes :
 1. **Run** : Pour lancer le programme depuis le terminal avec la CMD suivante : <!--Exemple de commande
 3. **Déploiement** : Déploie l'application dans ton OS
 
-yaml
-name: Mon Workflow
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
-jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout du code source
-        uses: actions/checkout@v2
-
-      - name: Set up JDK 11
-        uses: actions/setup-java@v2
-        with:
-          java-version: '11'
-
-      - name: Build du projet
-        run: mvn clean install
-
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout du code source
-        uses: actions/checkout@v2
-
-      - name: Set up JDK 11
-        uses: actions/setup-java@v2
-        with:
-          java-version: '11'
-
-      - name: Exécution des tests
-        run: mvn test
-
-  deployment:
-    name: Déploiement
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout du code source
-        uses: actions/checkout@v2
-
-      - name: Set up JDK 11
-        uses: actions/setup-java@v2
-        with:
-          java-version: '11'
-
-      - name: Déploiement sur l'environnement de production
-        run: ./deploy.sh --!>
      
   <table>
   <tr><td colspan="2"><a href="/README.md#%EF%B8%8F-templates">← Back to templates index</a></td></tr>
